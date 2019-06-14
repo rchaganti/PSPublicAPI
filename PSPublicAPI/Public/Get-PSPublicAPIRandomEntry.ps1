@@ -1,4 +1,4 @@
-﻿function Get-PSPublicAPIEntry
+function Get-PSPublicAPIRandomEntry
 {
     [CmdletBinding()]
     param
@@ -29,7 +29,7 @@
         $Category
     )
 
-    $uri = "${baseUri}entries"
+    $uri = "${baseUri}random"
 
     $queryParameters = @{}
     if ($Title)
