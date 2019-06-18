@@ -18,18 +18,15 @@ $allProtocols = [System.Net.SecurityProtocolType]'Ssl3,Tls,Tls11,Tls12'
 [System.Net.ServicePointManager]::SecurityProtocol = $allProtocols
 
 #Get public and private function definition files.
-$public  = @( Get-ChildItem -Path $PSScriptRoot\Public\ -Filter *.ps1 -Exclude *.Tests.ps1 -Recurse -ErrorAction SilentlyContinue )
+$public = @( Get-ChildItem -Path $PSScriptRoot\Public\ -Filter *.ps1 -Exclude *.Tests.ps1 -Recurse -ErrorAction SilentlyContinue )
 $private = @( Get-ChildItem -Path $PSScriptRoot\Private\*.ps1 -Exclude *.Tests.ps1 -ErrorAction SilentlyContinue )
 
 #Dot source the files
-foreach($import in @($public + $private))
-{
-    try
-    {
+foreach ($import in @($public + $private)) {
+    try {
         . $import.fullname
     }
-    catch
-    {
+    catch {
         Write-Error -Message "Failed to import function $($import.fullname): $_"
     }
 }
