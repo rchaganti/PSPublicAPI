@@ -2,7 +2,7 @@
 .SYNOPSIS
     Gets public API entries
 .DESCRIPTION
-    Gets specific APIs or all API entries from the public API service
+    Gets specific APIs for a given criteria or all API entries from the public API service
 .PARAMETER Title
     Specifies a substring from the public API title. No wildcards supported.
 .PARAMETER Description
@@ -20,7 +20,7 @@
 
     This command returns all the entries from the public API service
 .EXAMPLE
-    Get-PSPublicAPIEntry -Title at -Verbose
+    Get-PSPublicAPIEntry -Title 'at' -Verbose
 
     This command returns all the entries from the public API service where the title contains a substring at.
 #>
