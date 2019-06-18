@@ -81,7 +81,7 @@ function Get-PSPublicAPIEntry {
         $queryParameters.Add('category', $Category)
     }
     
-    $queryUri = Get-HttpQueryString -Uri $uri -QueryParameter $queryParameters
+    $queryUri = New-HttpQueryString -Uri $uri -QueryParameter $queryParameters
     $entries = (Invoke-RestMethod -Method Get -UseBasicParsing -Uri $queryUri).Entries
 
     return $entries
