@@ -2,7 +2,7 @@
 .SYNOPSIS
     Get a random public API entry
 .DESCRIPTION
-    Gets a random API entry public API service
+    Gets a random API entry public API service or a random API entry matching a specific criteria
 .PARAMETER Title
     Specifies a substring from the public API title. No wildcards supported.
 .PARAMETER Description
